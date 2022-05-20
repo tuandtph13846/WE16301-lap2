@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Dame</th>
+            <th scope="col">Defend</th>
+            <th scope="col">Speed</th>
+            <th scope="col">Price</th>
+            <th scope="col">Avatar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let champ of champs; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ champ.name}}</td>
+            <td>
+                <app-dame [dame]="champ.dame"></app-dame>
+            </td>
+            <td>{{ champ.defend}}</td>
+            <td>{{ champ.speed}}</td>
+            <td>{{ champ.price}}</td>
+            <td>
+                <app-avatar [src]="champ.avatar" [price]="champ.price"></app-avatar>
+            </td>
+            <!-- <td><img src={{champ.avatar}} alt={{champ.name}} style="width:150px"></td> -->
+        </tr>
+    </tbody>
+</table>
